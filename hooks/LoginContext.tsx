@@ -20,7 +20,7 @@ export const LoginContextProvider = ({children}) => {
   const configuration = () => {
     GoogleSignin.configure({
       webClientId:
-        '498070127211-2r8gprd180s3rohheismnn930vfdng4p.apps.googleusercontent.com',
+        '652979250077-jsk5l9mhnckstc3069vjrtfob16b7iiv.apps.googleusercontent.com',
     });
   };
 

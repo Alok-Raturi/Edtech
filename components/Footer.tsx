@@ -23,7 +23,7 @@ const Footer = ({active}) => {
           disabled={activeTab === 'explore'}
         >
           <View style={{alignItems: 'center'}}>
-            <Home stroke="red" fill="#fff" width={32} height={32} />
+            <Home stroke="red" fill="#fff" width={26} height={26} />
             <Text
               style={{
                 color: activeTab === 'explore' ? '#F44336' : '#333',
@@ -42,7 +42,7 @@ const Footer = ({active}) => {
           disabled={activeTab === 'study'}
         >
           <View style={{alignItems: 'center'}}>
-            <BookOpen stroke="red" fill="#fff" width={32} height={32} />
+            <BookOpen stroke="red" fill="#fff" width={26} height={26} />
             <Text
               style={{
                 color: activeTab === 'study' ? '#F44336' : '#333',
@@ -61,7 +61,7 @@ const Footer = ({active}) => {
           disabled={activeTab === 'discussion'}
         >
           <View style={{alignItems: 'center'}}>
-            <MessageSquare stroke="red" fill="#fff" width={32} height={32} />
+            <MessageSquare stroke="red" fill="#fff" width={26} height={26} />
 
             <Text
               style={{
@@ -81,7 +81,7 @@ const Footer = ({active}) => {
           disabled={activeTab === 'profile'}
         >
           <View style={{alignItems: 'center'}}>
-            <User stroke="red" fill="#fff" width={32} height={32} />
+            <User stroke="red" fill="#fff" width={26} height={26} />
 
             <Text
               style={{
@@ -113,6 +113,6 @@ const styles = StyleSheet.create({
   button: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    paddingVertical: 16,
+    paddingVertical: 8,
   },
 });

@@ -1,7 +1,17 @@
 import {View, Text} from 'react-native';
 import React, {useContext} from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {Authentication, HomeScreen, Profile, StudyMaterial} from './screens';
+import {
+  AboutUs,
+  Authentication,
+  HomeScreen,
+  Notification,
+  Profile,
+  SearchScreen,
+  SplashScreen,
+  StudyMaterial,
+  TermsAndConditions,
+} from './screens';
 import LoginContext from './hooks/LoginContext';
 import Discussion from './screens/Discussion';
 
@@ -9,12 +19,12 @@ const Stack = createNativeStackNavigator();
 
 const StackNavigator = () => {
   const {user} = useContext(LoginContext);
-  console.log(user);
 
   return (
     <Stack.Navigator>
       {!user ? (
         <>
+          {/* <Stack.Screen name="Splash" component={SplashScreen} options={{ headerShown: false, }} /> */}
           <Stack.Screen
             name="Authentication"
             component={Authentication}
@@ -25,7 +35,7 @@ const StackNavigator = () => {
           <Stack.Screen
             name="Home"
             component={HomeScreen}
-            // options={{headerShown: false}}
+            options={{headerShown: false}}
           />
           <Stack.Screen
             name="Study"
@@ -40,14 +50,30 @@ const StackNavigator = () => {
           <Stack.Screen
             name="Profile"
             component={Profile}
-            // options={{headerShown: false}}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="Terms"
+            component={TermsAndConditions}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="About"
+            component={AboutUs}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="Notification"
+            component={Notification}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="Search"
+            component={SearchScreen}
+            options={{headerShown: false}}
           />
         </>
-      ) : (
-        <>
-          <Text>Hell</Text>
-        </>
-      )}
+      ) : null}
     </Stack.Navigator>
   );
 };

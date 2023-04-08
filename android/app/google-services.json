@@ -1,20 +1,20 @@
 {
   "project_info": {
-    "project_number": "498070127211",
-    "project_id": "academically-25713",
-    "storage_bucket": "academically-25713.appspot.com"
+    "project_number": "652979250077",
+    "project_id": "youracademically-4b6b9",
+    "storage_bucket": "youracademically-4b6b9.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:498070127211:android:8f00562162b7ae1594672e",
+        "mobilesdk_app_id": "1:652979250077:android:18a368fa19e11966640574",
         "android_client_info": {
           "package_name": "com.academically"
         }
       },
       "oauth_client": [
         {
-          "client_id": "498070127211-jsgum12piusn2cei03dre36vu67nt7k6.apps.googleusercontent.com",
+          "client_id": "652979250077-6enaae1r9fj1ol9hnah2p8qgpb2ctub9.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.academically",
@@ -22,20 +22,20 @@
           }
         },
         {
-          "client_id": "498070127211-2r8gprd180s3rohheismnn930vfdng4p.apps.googleusercontent.com",
+          "client_id": "652979250077-jsk5l9mhnckstc3069vjrtfob16b7iiv.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDdN7J_Ar7yHDJ8GqS4saVJBDLf3QVHorA"
+          "current_key": "AIzaSyBAoqn6nYqCEmCxYxS7ADQtIVrRoX49IsM"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "498070127211-2r8gprd180s3rohheismnn930vfdng4p.apps.googleusercontent.com",
+              "client_id": "652979250077-3eqjdavd89ken06dr7htg0dpgu89jm1e.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

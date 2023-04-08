@@ -39,7 +39,7 @@ const Authentication = ({navigation}) => {
             size={GoogleSigninButton.Size.Wide}
             color={GoogleSigninButton.Color.Dark}
             // onPress={() => signIn(navigation)}
-            onPress={() => navigation.navigate('Home')}
+            onPress={() => navigation.replace('Home')}
             disabled={false}
           />
         </View>
