@@ -4,6 +4,8 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {
   AboutUs,
   Authentication,
+  ContactUsScreen,
+  FAQScreen,
   HomeScreen,
   Notification,
   Profile,
@@ -71,6 +73,16 @@ const StackNavigator = () => {
             name="Search"
             component={SearchScreen}
             options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="FAQ"
+            component={FAQScreen}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="Contact"
+            component={ContactUsScreen}
+            // options={{headerShown: false}}
           />
         </>
       ) : null}

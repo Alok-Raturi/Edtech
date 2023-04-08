@@ -17,7 +17,7 @@ const Menu = () => {
     const link = 'https://api.whatsapp.com/send?phone=+916396098067';
     Linking.canOpenURL(link)
       .then(supported => {
-        if (!supported) {
+        if (supported) {
           Alert.alert(
             'Please install whats app to send direct message to students via whatsapp',
           );
@@ -55,16 +55,28 @@ const Menu = () => {
       >
         <Text style={styles.menuText}>About US</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.menuItem}>
+      <TouchableOpacity
+        style={styles.menuItem}
+        onPress={e => {
+          navigation.navigate('FAQ');
+          e.stopPropagation();
+        }}
+      >
         <Text style={styles.menuText}>FAQs</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.menuItem}>
+      <TouchableOpacity
+        style={styles.menuItem}
+        onPress={e => {
+          navigation.navigate('Contact');
+          e.stopPropagation();
+        }}
+      >
         <Text style={styles.menuText}>Contact Us</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.menuItem}
         onPress={e => {
-          Linking.openURL('https://api.whatsapp.com/send?phone=+916396098067');
+          handleChatPress();
           e.stopPropagation();
         }}
       >
@@ -108,6 +120,9 @@ const styles = StyleSheet.create({
     height: 150,
     resizeMode: 'contain',
     alignSelf: 'center',
+    backgroundColor: 'white',
+    borderRadius: 75,
+    marginBottom: 20,
   },
   WelcomeInfo: {
     justifyContent: 'center',
