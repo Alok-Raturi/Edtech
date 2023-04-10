@@ -23,7 +23,7 @@ const Notification = () => {
   const renderAnnouncements = () => {
     return announcements.map(announcement => (
       <View key={announcement.id} style={styles.notificationItem}>
-        <Text>{announcement.text}</Text>
+        <Text style={styles.feed}>{announcement.text}</Text>
       </View>
     ));
   };
@@ -31,7 +31,7 @@ const Notification = () => {
   const renderNotifications = () => {
     return notifications.map(notification => (
       <View key={notification.id} style={styles.notificationItem}>
-        <Text>{notification.text}</Text>
+        <Text style={styles.feed}>{notification.text}</Text>
       </View>
     ));
   };
@@ -73,7 +73,6 @@ const Notification = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#5c6962',
   },
   tabContainer: {
     flexDirection: 'row',
@@ -85,11 +84,11 @@ const styles = StyleSheet.create({
   tabButton: {
     paddingVertical: 10,
     paddingHorizontal: 20,
-    backgroundColor: 'grey',
+    backgroundColor: '#8693ab',
     borderRadius: 5,
   },
   activeTabButton: {
-    backgroundColor: 'white',
+    backgroundColor: '#637074',
   },
   tabButtonText: {
     fontSize: 16,
@@ -105,7 +104,8 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 10,
     textAlign: 'center',
-    paddingVertical: 8,
+    paddingVertical: 10,
+    color: 'black',
   },
   notificationItem: {
     paddingVertical: 10,
@@ -116,6 +116,9 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   notificationText: {
+    color: 'black',
+  },
+  feed: {
     color: 'black',
   },
 });

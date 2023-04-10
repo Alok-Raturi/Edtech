@@ -5,6 +5,7 @@ import {
   AboutUs,
   Authentication,
   ContactUsScreen,
+  CourseScreen,
   FAQScreen,
   HomeScreen,
   Notification,
@@ -42,12 +43,17 @@ const StackNavigator = () => {
           <Stack.Screen
             name="Study"
             component={StudyMaterial}
-            // options={{headerShown: false}}
+            options={{headerShown: false}}
           />
           <Stack.Screen
             name="Discussion"
             component={Discussion}
-            // options={{headerShown: false}}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="CourseScreen"
+            component={CourseScreen}
+            options={{headerShown: false}}
           />
           <Stack.Screen
             name="Profile"
