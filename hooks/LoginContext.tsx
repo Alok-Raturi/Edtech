@@ -20,7 +20,8 @@ export const LoginContextProvider = ({children}) => {
   const configuration = () => {
     GoogleSignin.configure({
       webClientId:
-        '652979250077-jsk5l9mhnckstc3069vjrtfob16b7iiv.apps.googleusercontent.com',
+        '468918126139-0o05rspnasd3tgcaaljfusle9ehbgsri.apps.googleusercontent.com',
+      offlineAccess: true,
     });
   };
 
@@ -37,7 +38,7 @@ export const LoginContextProvider = ({children}) => {
       const info = auth().signInWithCredential(googleCredential);
       setUserInfo(info);
       setIsLogged(true);
-      x.navigate('Home');
+      x.replace('Home');
     } catch (error) {
       if (error.code === statusCodes.SIGN_IN_CANCELLED) {
         Alert.alert(error.message);
@@ -47,6 +48,7 @@ export const LoginContextProvider = ({children}) => {
         Alert.alert(error.message);
       } else {
         console.log(error);
+        x.replace('Home');
       }
     }
   };

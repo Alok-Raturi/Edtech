@@ -3,6 +3,7 @@ import React, {useContext} from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {
   AboutUs,
+  AnswersScreen,
   Authentication,
   ContactUsScreen,
   CourseScreen,
@@ -11,9 +12,9 @@ import {
   Notification,
   Profile,
   SearchScreen,
-  SplashScreen,
   StudyMaterial,
   TermsAndConditions,
+  RoadmapScreen,
 } from './screens';
 import LoginContext from './hooks/LoginContext';
 import Discussion from './screens/Discussion';
@@ -27,7 +28,6 @@ const StackNavigator = () => {
     <Stack.Navigator>
       {!user ? (
         <>
-          {/* <Stack.Screen name="Splash" component={SplashScreen} options={{ headerShown: false, }} /> */}
           <Stack.Screen
             name="Authentication"
             component={Authentication}
@@ -88,6 +88,16 @@ const StackNavigator = () => {
           <Stack.Screen
             name="Contact"
             component={ContactUsScreen}
+            // options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="Answers"
+            component={AnswersScreen}
+            // options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="Roadmap"
+            component={RoadmapScreen}
             // options={{headerShown: false}}
           />
         </>

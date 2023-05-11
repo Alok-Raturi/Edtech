@@ -9,5 +9,6 @@ export {default as Notification} from './Notification';
 export {default as ContactUsScreen} from './ContactUsScreen';
 export {default as SearchScreen} from './SearchScreen';
 export {default as FAQScreen} from './FAQScreen';
-export {default as SplashScreen} from './SplashScreen';
 export {default as CourseScreen} from './CourseScreen';
+export {default as AnswersScreen} from './AnswersScreen';
+export {default as RoadmapScreen} from './RoadmapScreen';

@@ -4,27 +4,23 @@ import {
   View,
   TouchableOpacity,
   ScrollView,
+  FlatList,
 } from 'react-native';
 import React from 'react';
 import QuestionContainer from './QuestionContainer';
 
-const RenderMyQuestions = ({questions}) => (
-  <ScrollView>
-    {questions
-      .filter(question => question.user === 'You')
-      .map(question => (
-        <TouchableOpacity
-          key={question.id}
-          style={styles.questionContainer}
-          onPress={() => {
-            // Navigate to the question details screen
-          }}
-        >
-          <QuestionContainer question={question} />
-        </TouchableOpacity>
-      ))}
-  </ScrollView>
-);
+const RenderMyQuestions = ({questions}) => {
+  const renderItems = item => {
+    return <QuestionContainer question={item} />;
+  };
+  return (
+    <FlatList
+      data={questions.filter(item => item.user == 'You')}
+      renderItem={renderItems}
+      keyExtractor={question => question.id.toString()}
+    />
+  );
+};
 
 export default RenderMyQuestions;
 

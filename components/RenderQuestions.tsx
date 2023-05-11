@@ -5,24 +5,23 @@ import {
   StyleSheet,
   Text,
   View,
+  FlatList,
 } from 'react-native';
 import QuestionContainer from './QuestionContainer';
 
-const renderQuestions = ({questions}) => (
-  <ScrollView>
-    {questions.map(question => (
-      <TouchableOpacity
-        key={question.id}
-        style={styles.questionContainer}
-        onPress={() => {
-          // Navigate to the question details screen
-        }}
-      >
-        <QuestionContainer question={question} />
-      </TouchableOpacity>
-    ))}
-  </ScrollView>
-);
+const renderQuestions = ({questions}) => {
+  const renderItems = item => {
+    return <QuestionContainer question={item} />;
+  };
+
+  return (
+    <FlatList
+      data={questions}
+      renderItem={renderItems}
+      keyExtractor={question => question.id.toString()}
+    />
+  );
+};
 
 export default renderQuestions;
 
