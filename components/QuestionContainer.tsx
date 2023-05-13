@@ -9,11 +9,14 @@ const QuestionContainer = ({question}) => {
     <TouchableOpacity
       key={question.id}
       style={styles.questionContainer}
-      // onPress={() => {
-      //   navigation.navigate('Answers', {
-      //     questionId: question.item.id,
-      //   });
-      // }}
+      onPress={() => {
+        navigation.navigate('Answers', {
+          Answers: question.item.answers,
+          Title: question.item.title,
+          Body: question.item.body,
+          
+        });
+      }}
     >
       <Text style={styles.questionTitle}>{question.item.title}</Text>
       <Text style={styles.questionBody}>{question.item.body}</Text>

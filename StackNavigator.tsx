@@ -93,7 +93,7 @@ const StackNavigator = () => {
           <Stack.Screen
             name="Answers"
             component={AnswersScreen}
-            // options={{headerShown: false}}
+            options={{headerShown: false}}
           />
           <Stack.Screen
             name="Roadmap"

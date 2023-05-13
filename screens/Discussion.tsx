@@ -7,55 +7,22 @@ import {
   StyleSheet,
 } from 'react-native';
 import {Plus} from 'react-native-feather';
-import {RenderQuestions, RenderMyQuestions, Footer} from '../components';
-
-const questions = [
-  {
-    id: 1,
-    user: 'You',
-    title: 'How do I use React Navigation?',
-    body:
-      'I am having trouble setting up the Stack Navigator. Can someone provide guidance?',
-    answers: [
-      {
-        id: 1,
-        user: 'John Doe',
-        body:
-          'You can check the React Navigation documentation for detailed instructions.',
-      },
-      {
-        id: 2,
-        user: 'Jane Smith',
-        body: 'You can also watch some video tutorials on YouTube.',
-      },
-    ],
-  },
-  {
-    id: 2,
-    user: 'John Doe',
-    title: 'What is the difference between state and props in React?',
-    body:
-      'I am confused about when to use state and when to use props. Can someone explain?',
-    answers: [
-      {
-        id: 1,
-        user: 'Jane Smith',
-        body:
-          'State is used to manage internal component state, while props are used to pass data from parent to child components.',
-      },
-      {
-        id: 2,
-        user: 'You',
-        body:
-          'Additionally, state can be updated using setState(), while props are read-only.',
-      },
-    ],
-  },
-];
+import {RenderQuestions, RenderMyQuestions, Footer, QuestionModal} from '../components';
+import questions from '../data/question'
+import { act } from 'react-test-renderer';
 
 const Discussion = () => {
   const [activeTab, setActiveTab] = useState('discussion');
+  const [activeModal, setActiveModal] = useState(false)
+  const toggleMenu = () => {
+    setActiveModal(!activeModal)
+  }
 
+  const handlePostQuestion = (question) => {
+    // Handle posting the question
+    console.log('Question:', question);
+  };
+  
   return (
     <View style={styles.container}>
       <View style={styles.tabs}>
@@ -80,12 +47,20 @@ const Discussion = () => {
       <TouchableOpacity
         style={styles.floatingButton}
         onPress={() => {
-          // Navigate to the ask question screen
+          toggleMenu();
         }}
       >
         <Plus height={16} width={16} color="black" />
       </TouchableOpacity>
       <Footer active={'discussion'} />
+
+      {/* Modal */}
+      {activeModal &&
+        <QuestionModal
+        visible={activeModal}
+        onClose={() => setActiveModal(false)}
+        onPost={handlePostQuestion}
+      />}
     </View>
   );
 };

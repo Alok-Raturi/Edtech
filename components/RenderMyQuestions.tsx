@@ -1,9 +1,5 @@
 import {
   StyleSheet,
-  Text,
-  View,
-  TouchableOpacity,
-  ScrollView,
   FlatList,
 } from 'react-native';
 import React from 'react';

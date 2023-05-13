@@ -7,12 +7,9 @@ import {
 } from 'react-native';
 import React from 'react';
 import {Footer} from '../components';
+import courses from '../data/data';
 
-const subjects = [
-  {id: 1, name: 'Mathematics'},
-  {id: 2, name: 'Physics'},
-  {id: 3, name: 'Chemistry'},
-];
+const subjects = courses;
 
 const StudyMaterial = ({navigation}) => {
   const onPressSubject = subjectId => {
@@ -28,7 +25,7 @@ const StudyMaterial = ({navigation}) => {
           style={styles.subjectButton}
           onPress={() => onPressSubject(subject.id)}
         >
-          <Text style={styles.subjectName}>{subject.name}</Text>
+          <Text style={styles.subjectName}>{subject.title}</Text>
         </TouchableOpacity>
       ))}
       <Footer active={'study'} />

@@ -16,6 +16,7 @@ const Authentication = ({navigation}) => {
   useEffect(() => {
     configuration();
   }, []);
+  
   return (
     <ImageBackground
       source={require('../components/images/LoginBg.png')}
