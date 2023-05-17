@@ -22,11 +22,12 @@ import Discussion from './screens/Discussion';
 const Stack = createNativeStackNavigator();
 
 const StackNavigator = () => {
-  const {user} = useContext(LoginContext);
-
+  const {isLogged} = useContext(LoginContext);
+  // console.log(isLogged)
   return (
     <Stack.Navigator>
-      {!user ? (
+      {!isLogged?
+
         <>
           <Stack.Screen
             name="Authentication"
@@ -35,11 +36,14 @@ const StackNavigator = () => {
               headerShown: false,
             }}
           />
+          </>
+        :
+        <>
           <Stack.Screen
             name="Home"
             component={HomeScreen}
             options={{headerShown: false}}
-          />
+            />
           <Stack.Screen
             name="Study"
             component={StudyMaterial}
@@ -49,7 +53,7 @@ const StackNavigator = () => {
             name="Discussion"
             component={Discussion}
             options={{headerShown: false}}
-          />
+            />
           <Stack.Screen
             name="CourseScreen"
             component={CourseScreen}
@@ -59,12 +63,12 @@ const StackNavigator = () => {
             name="Profile"
             component={Profile}
             options={{headerShown: false}}
-          />
+            />
           <Stack.Screen
             name="Terms"
             component={TermsAndConditions}
             options={{headerShown: false}}
-          />
+            />
           <Stack.Screen
             name="About"
             component={AboutUs}
@@ -79,12 +83,12 @@ const StackNavigator = () => {
             name="Search"
             component={SearchScreen}
             options={{headerShown: false}}
-          />
+            />
           <Stack.Screen
             name="FAQ"
             component={FAQScreen}
             options={{headerShown: false}}
-          />
+            />
           <Stack.Screen
             name="Contact"
             component={ContactUsScreen}
@@ -94,14 +98,15 @@ const StackNavigator = () => {
             name="Answers"
             component={AnswersScreen}
             options={{headerShown: false}}
-          />
+            />
           <Stack.Screen
             name="Roadmap"
             component={RoadmapScreen}
             // options={{headerShown: false}}
           />
         </>
-      ) : null}
+  }
+      
     </Stack.Navigator>
   );
 };

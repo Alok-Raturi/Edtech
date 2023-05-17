@@ -6,14 +6,18 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import React from 'react';
-import {Footer} from '../components';
+import {Footer, YetToCome} from '../components';
 import courses from '../data/data';
 
 const subjects = courses;
 
 const StudyMaterial = ({navigation}) => {
-  const onPressSubject = subjectId => {
-    navigation.navigate('CourseScreen', {subjectId, subjects});
+  const onPressSubject = subject => {
+    navigation.navigate('CourseScreen', {
+      notes: subject.notes,
+      books: subject.books,
+      PYQs: subject.PYQs,
+    });
   };
 
   return (
@@ -23,17 +27,15 @@ const StudyMaterial = ({navigation}) => {
         <TouchableOpacity
           key={subject.id}
           style={styles.subjectButton}
-          onPress={() => onPressSubject(subject.id)}
-        >
+          onPress={() => onPressSubject(subject)}>
           <Text style={styles.subjectName}>{subject.title}</Text>
         </TouchableOpacity>
       ))}
+      <YetToCome />
       <Footer active={'study'} />
     </SafeAreaView>
   );
 };
-
-// export default StudyMaterial;
 
 const styles = StyleSheet.create({
   container: {

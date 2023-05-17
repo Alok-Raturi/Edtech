@@ -1,12 +1,12 @@
 import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 import React from 'react';
 
-const RoadmapCard = ({handleVideoClick, item}) => {
+const RoadmapCard = ({downloadFile, item}) => {
+  console.log(item);
   return (
     <TouchableOpacity
       style={styles.roadmapItem}
-      onPress={() => handleVideoClick(item.value)}
-    >
+      onPress={() => downloadFile(item.value)}>
       <Text style={styles.itemText}>{item.key}</Text>
     </TouchableOpacity>
   );

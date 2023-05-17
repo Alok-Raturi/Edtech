@@ -11,7 +11,7 @@ const RoadmapScreen = ({route}) => {
   };
 
   const renderRoadmapCard = ({item}) => (
-    <RoadmapCard item={item} handleVideoClick={handleVideoClick} />
+    <RoadmapCard item={item} downloadFile={handleVideoClick} />
   );
 
   return (

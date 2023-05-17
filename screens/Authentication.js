@@ -9,20 +9,23 @@ import {
 import React, {useContext, useEffect} from 'react';
 import {GoogleSigninButton} from '@react-native-google-signin/google-signin';
 import LoginContext from '../hooks/LoginContext';
+import {useLayoutEffect} from 'react';
 
 const Authentication = ({navigation}) => {
-  const {signIn, configuration} = useContext(LoginContext);
+  const {signIn, configuration, isSignedIn, getCurrentUser} =
+    useContext(LoginContext);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
+    isSignedIn(navigation);
+    getCurrentUser();
     configuration();
   }, []);
-  
+
   return (
     <ImageBackground
       source={require('../components/images/LoginBg.png')}
       resizeMode="cover"
-      style={styles.bg}
-    >
+      style={styles.bg}>
       <SafeAreaView style={styles.container}>
         <View style={styles.intro}>
           <Text style={styles.text}>Welcome to</Text>
@@ -36,11 +39,10 @@ const Authentication = ({navigation}) => {
         </View>
         <View style={styles.ButtonContainer}>
           <GoogleSigninButton
-            style={{width: 192, height: 48}}
+            style={{width: 300, height: 48}}
             size={GoogleSigninButton.Size.Wide}
             color={GoogleSigninButton.Color.Dark}
             onPress={() => signIn(navigation)}
-            // onPress={() => navigation.replace('Home')}
             disabled={false}
           />
         </View>

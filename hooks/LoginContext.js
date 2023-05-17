@@ -10,18 +10,17 @@ export const LoginContext = createContext();
 
 export const LoginContextProvider = ({children}) => {
   const [isLogged, setIsLogged] = useState(false);
-  const [userInfo, setUserInfo] = useState([]);
+  const [userInfo, setUserInfo] = useState(null);
 
-  useEffect(() => {
-    isSignedIn();
-    getCurrentUser();
-  }, []);
+  // useEffect(() => {
+  //   isSignedIn();
+  //   getCurrentUser();
+  // }, []);
 
   const configuration = () => {
     GoogleSignin.configure({
       webClientId:
-        '468918126139-0o05rspnasd3tgcaaljfusle9ehbgsri.apps.googleusercontent.com',
-      offlineAccess: true,
+        '925345503288-6rrrgnhea9bdfq8drqrn5067n1fmskpo.apps.googleusercontent.com',
     });
   };
 
@@ -30,12 +29,13 @@ export const LoginContextProvider = ({children}) => {
       await GoogleSignin.hasPlayServices({showPlayServicesUpdateDialog: true});
       // Get the users ID token
       const {idToken} = await GoogleSignin.signIn();
-
       // Create a Google credential with the token
-      const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+      const googleCredential = await auth.GoogleAuthProvider.credential(
+        idToken,
+      );
 
       // Sign-in the user with the credential
-      const info = auth().signInWithCredential(googleCredential);
+      const info = await auth().signInWithCredential(googleCredential);
       setUserInfo(info);
       setIsLogged(true);
       x.replace('Home');
@@ -53,9 +53,10 @@ export const LoginContextProvider = ({children}) => {
     }
   };
 
-  const isSignedIn = async () => {
+  const isSignedIn = async x => {
     const isSignedIn = await GoogleSignin.isSignedIn();
     setIsLogged(isSignedIn);
+    if (isSignedIn == true) x.replace('Home');
   };
 
   async function getCurrentUser() {
@@ -65,10 +66,10 @@ export const LoginContextProvider = ({children}) => {
 
   const signOut = async x => {
     try {
-      await GoogleSignin.signOut();
-      setUserInfo([]);
       setIsLogged(false);
-      x.navigate('Authentication');
+      await GoogleSignin.signOut();
+      x.replace('Authentication');
+      setUserInfo(null);
     } catch (error) {
       console.error(error);
     }
@@ -78,14 +79,13 @@ export const LoginContextProvider = ({children}) => {
     <LoginContext.Provider
       value={{
         isLogged: isLogged,
-        userInfo: userInfo,
+        userInfo: userInfo !== null ? userInfo['user'] : {},
         configuration: configuration,
         signIn: signIn,
         isSignedIn: isSignedIn,
         getCurrentUser: getCurrentUser,
         signOut: signOut,
-      }}
-    >
+      }}>
       {children}
     </LoginContext.Provider>
   );

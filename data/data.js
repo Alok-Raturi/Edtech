@@ -23,6 +23,9 @@ const courses = [
           'https://www.youtube.com/playlist?list=PLu0W_9lII9agpFUAlPFe_VNSlXW5uE0YL',
       },
     ],
+    notes: [],
+    books: [],
+    PYQs: [],
   },
   {
     id: '2',
@@ -32,12 +35,12 @@ const courses = [
     roadmap: [
       {
         id: 1,
-        key: 'frontended development roadmap',
+        key: 'Frontended development roadmap',
         value: 'https://roadmap.sh/frontend',
       },
       {
         id: 2,
-        key: 'Frontended development roadmap',
+        key: 'Frontended devlopment roadmap',
         value: 'https://roadmap.sh/backend',
       },
       {
@@ -47,6 +50,16 @@ const courses = [
           'https://www.youtube.com/playlist?list=PLWKjhJtqVAblQe2CCWqV4Zy3LY01Z8aF1',
       },
     ],
+    notes: [
+      {
+        id: 1,
+        key: 'Web development notes',
+        values:
+          'https://mrcet.com/downloads/digital_notes/IT/WEB%20APPLICATION%20DEVELOPMENT.pdf',
+      },
+    ],
+    books: [],
+    PYQs: [],
   },
   {
     id: '3',
@@ -80,6 +93,16 @@ const courses = [
           'https://www.youtube.com/playlist?list=PLWKjhJtqVAblQe2CCWqV4Zy3LY01Z8aF1',
       },
     ],
+    notes: [
+      {
+        id: 1,
+        key: 'Data Science Notes',
+        value:
+          'https://mrcet.com/downloads/digital_notes/CSE/II%20Year/DS/Introduction%20to%20Datascience%20[R20DS501].pdf',
+      },
+    ],
+    books: [],
+    PYQs: [],
   },
   {
     id: '4',
@@ -89,46 +112,57 @@ const courses = [
     roadmap: [
       {
         id: 1,
-        key: 'complete roadmap for android development',
+        key: 'complete roadmap for android development:',
         value: 'https://roadmap.sh/roadmaps/android/roadmap.png',
       },
       {
         id: 2,
-        key: 'Introdunction to mobile app development',
+        key: 'Introdunction to mobile app development:',
         value:
           'https://www.youtube.com/watch?v=_P7wHN_kOv4&list=PLhQjrBD2T382gdfveyad09Ierl_3Jh_wR',
       },
       {
         id: 3,
-        key: 'Learning Javascript',
+        key: 'Learning Javascript:',
         value:
           'https://www.youtube.com/watch?v=X52b-8y2Hf4&list=PLhQjrBD2T382gdfveyad09Ierl_3Jh_wR&index=2',
       },
       {
         id: 4,
-        key: 'Learning React Native basics',
+        key: 'Learning React Native basics:',
         value:
           'https://www.youtube.com/watch?v=7O43VDOlQ_o&list=PLhQjrBD2T382gdfveyad09Ierl_3Jh_wR&index=4',
       },
       {
         id: 5,
-        key: 'Lists,User input and Debugging concept',
+        key: 'Lists,User input and Debugging concept:',
         value:
           'https://www.youtube.com/watch?v=-E1tQPQSAxc&list=PLhQjrBD2T382gdfveyad09Ierl_3Jh_wR&index=6',
       },
       {
         id: 6,
-        key: 'Data, Expo and redux concept',
+        key: 'Data, Expo and redux concept:',
         value:
           'https://www.youtube.com/watch?v=jWwOTg35COs&list=PLhQjrBD2T382gdfveyad09Ierl_3Jh_wR&index=9',
       },
+
       {
         id: 7,
-        key: 'Complete course',
+        key: 'Complete course:',
         value:
           'https://www.youtube.com/playlist?list=PLhQjrBD2T382gdfveyad09Ierl_3Jh_wR',
       },
     ],
+    notes: [
+      {
+        id: 1,
+        key: 'Notes of Mobile devlopment:',
+        value:
+          'https://mrcet.com/downloads/digital_notes/IT/(R17A1206)%20Mobile%20Application%20Development.pdf',
+      },
+    ],
+    books: [],
+    PYQs: [],
   },
   {
     id: '5',
@@ -137,22 +171,32 @@ const courses = [
     roadmap: [
       {
         id: 1,
-        key: 'Computer Network Videos',
+        key: 'Computer Network Videos:',
         value:
           'https://www.youtube.com/playlist?list=PLxCzCOWd7aiGFBD2-2joCpWOLUrDLvVV_',
       },
       {
         id: 2,
-        key: 'Computer Network Practical Videos',
+        key: 'Computer Network Practical Videos:',
         value:
           'https://www.youtube.com/playlist?list=PLNACxJ6nKQvxOtVKUdaI4CLMXjaIx6DRa',
       },
       {
         id: 3,
-        key: 'Computer Network written Content',
+        key: 'Computer Network written Content:',
         value: 'https://www.javatpoint.com/computer-network-tutorial',
       },
     ],
+    notes: [
+      {
+        id: 1,
+        key: 'Computer Network Notes:',
+        value:
+          'https://mrcet.com/downloads/digital_notes/CSE/III%20Year/COMPUTER%20NETWORKS%20NOTES.pdf',
+      },
+    ],
+    books: [],
+    PYQs: [],
   },
   {
     id: '6',
@@ -161,17 +205,55 @@ const courses = [
     roadmap: [
       {
         id: 1,
-        key: 'COA Videos',
+        key: 'COA Videos:',
         value:
           'https://www.youtube.com/playlist?list=PLxCzCOWd7aiHMonh3G6QNKq53C6oNXGrX',
       },
+    ],
+    notes: [
       {
-        id: 2,
-        key: 'COA content',
+        id: 1,
+        key: 'COA content:',
         value:
           'https://www.javatpoint.com/computer-organization-and-architecture-tutorial',
       },
+      {
+        id: 2,
+        key: 'COA notes:',
+        value:
+          'https://mrcet.com/downloads/digital_notes/IT/R18A1201%20COA.pdf',
+      },
     ],
+    books: [],
+    PYQs: [],
+  },
+  {
+    id: '7',
+    title: 'Software engineering',
+    description: 'software engineering(SE) Full Course',
+    roadmap: [
+      {
+        id: 1,
+        key: 'SE Videos:',
+        value:
+          'https://www.youtube.com/playlist?list=PLxCzCOWd7aiEed7SKZBnC6ypFDWYLRvB2',
+      },
+    ],
+    notes: [
+      {
+        id: 1,
+        key: 'SE content:',
+        value: 'https://www.javatpoint.com/software-engineering',
+      },
+      {
+        id: 2,
+        key: 'SE notes:',
+        value:
+          'https://mrcet.com/downloads/digital_notes/CSE/III%20Year/Software%20Engineering.pdf',
+      },
+    ],
+    books: [],
+    PYQs: [],
   },
 ];
 

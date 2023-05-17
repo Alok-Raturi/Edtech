@@ -8,9 +8,9 @@
     <ImageView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginTop="270dp"
-    android:layout_marginLeft="55dp"
     android:src="@drawable/launch_screen"
+       android:layout_marginTop="290dp"
+    android:layout_marginLeft="80dp"
     android:scaleType="centerCrop"
   />
 </RelativeLayout>
